@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1241236274A28140031D843 /* TeamCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1241235274A28140031D843 /* TeamCollectionViewController.swift */; };
+		A1241239274A38AF0031D843 /* HeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1241238274A38AF0031D843 /* HeroesCell.swift */; };
 		A144C5DF2746ADD000CB75F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144C5DE2746ADD000CB75F3 /* AppDelegate.swift */; };
 		A144C5E12746ADD000CB75F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144C5E02746ADD000CB75F3 /* SceneDelegate.swift */; };
 		A144C5E32746ADD000CB75F3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A144C5E22746ADD000CB75F3 /* StartViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A1241235274A28140031D843 /* TeamCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewController.swift; sourceTree = "<group>"; };
+		A1241238274A38AF0031D843 /* HeroesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCell.swift; sourceTree = "<group>"; };
 		A144C5DB2746ADD000CB75F3 /* Heroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Heroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A144C5DE2746ADD000CB75F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A144C5E02746ADD000CB75F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1241237274A38850031D843 /* TabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				A1241238274A38AF0031D843 /* HeroesCell.swift */,
+			);
+			path = TabelCell;
+			sourceTree = "<group>";
+		};
 		A144C5D22746ADD000CB75F3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 			children = (
 				A1D83AD22748CBA100A14FEC /* Resourse */,
 				A144C5F52746B35700CB75F3 /* ViewControllers */,
+				A1241237274A38850031D843 /* TabelCell */,
 				A15B049F2747F97300AD42E8 /* Storyboards */,
 				A15B04A2274818DA00AD42E8 /* Models */,
 				A144C5FA2746B6C400CB75F3 /* Servise */,
@@ -212,6 +223,7 @@
 				A144C5DF2746ADD000CB75F3 /* AppDelegate.swift in Sources */,
 				A144C5F92746B67600CB75F3 /* NetworkServise.swift in Sources */,
 				A144C5E12746ADD000CB75F3 /* SceneDelegate.swift in Sources */,
+				A1241239274A38AF0031D843 /* HeroesCell.swift in Sources */,
 				A144C5E92746ADD000CB75F3 /* Heroes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDWNKQ472C;
@@ -389,6 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HDWNKQ472C;

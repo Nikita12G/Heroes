@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CloudKit
 
 class StartViewController: UITableViewController {
     
@@ -24,6 +23,7 @@ class StartViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
         tableView.largeContentTitle = "Take Hero"
         setupSearchBar()
         setupTableView()
@@ -37,10 +37,9 @@ class StartViewController: UITableViewController {
     }
     
     private func setupSearchBar() {
-        navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search hero"
+        navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -57,6 +56,8 @@ class StartViewController: UITableViewController {
         }
         return heroData.count
     }
+    
+//    MARK: - Table view data sours
     override func tableView(_ tabelView: UITableView, cellForRowAt indexPath: IndexPath ) -> UITableViewCell {
         
         var hero: HeroData
@@ -68,22 +69,35 @@ class StartViewController: UITableViewController {
         }
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = heroData[indexPath.row].localized_name.capitalized
+        cell.textLabel?.text = hero.localized_name.capitalized
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "startVCSegue", sender: self)
     }
+    
+//    MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? HeroViewController {
-            destination.hero = heroData[tableView.indexPathForSelectedRow?.row ?? 0]
+            
+            var hero: HeroData
+            
+            if isFiltering {
+                hero = searchHero[tableView.indexPathForSelectedRow?.row ?? 0]
+            } else {
+                hero = heroData[tableView.indexPathForSelectedRow?.row ?? 0]
+            }
+            destination.hero = hero
+            
         }
     }
 }
 
-extension StartViewController: UISearchBarDelegate {
+// MARK: - UISearchResultUpdating
+extension StartViewController: UISearchResultsUpdating {
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    private func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.endEditing(true)
     }
@@ -98,7 +112,6 @@ extension StartViewController: UISearchBarDelegate {
         })
         tableView.reloadData()
     }
-
+    
 }
-
 

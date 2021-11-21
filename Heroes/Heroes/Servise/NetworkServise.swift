@@ -1,6 +1,6 @@
 //
 //  NetworkServise.swift
-//  Heroуs
+//  Heroes
 //
 //  Created by Никита Гуляев on 18.11.2021.
 //
@@ -8,7 +8,7 @@
 import UIKit
 
 class NetworkService {
-
+    
     func request(completion: @escaping ([HeroData]) -> ()) {
         guard let url = URL(string: "https://api.opendota.com/api/heroStats") else { return }
         
@@ -17,6 +17,7 @@ class NetworkService {
                 print(error?.localizedDescription ?? "error data")
                 return
             }
+            
             if error == nil {
                 do {
                     let decoder = JSONDecoder()

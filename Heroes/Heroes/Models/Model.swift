@@ -23,3 +23,8 @@ let attributeHero = [
     "Speed",
     "Flight"
 ]
+
+    var randomAttribute: Int {
+    let randomValue = attributeHero.randomElement()
+    return randomValue?.count ?? 0
+}
